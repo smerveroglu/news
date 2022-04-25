@@ -15,7 +15,3 @@ app.component("font-awesome-icon", FontAwesomeIcon)
 .use(store)
 .mount("#app");
 
-// router.beforeEach((to, from, next) => {
-//   document.querySelector(".flex-sidebar").classList.add("hidden");
-//   next();
-// });

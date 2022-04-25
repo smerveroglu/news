@@ -1,9 +1,5 @@
 module.exports = {
-  content: [
-    "./public/**/*.html",
-    "./src/**/*.{vue,js,ts,jsx,tsx}",
-    // "./node_modules/flowbite/**/*.js",
-  ],
+  content: ["./public/**/*.html", "./src/**/*.{vue,js,ts,jsx,tsx}"],
   theme: {
     extend: {
       width: {
@@ -15,10 +11,11 @@ module.exports = {
       },
       backgroundColor: {
         packed: "#A9BACC",
-        // packed: "#f2f2f2", you can use this color if you like
+        header:"#ECEAED"
       },
       colors: {
         primary: "rgb(36 100 167)",
+        header: "rgb(7 63 121)",
       },
       fontFamily: {
         lexend: "'Lexend', sans-serif",

@@ -1,5 +1,5 @@
 <template>
-  <header class="p-2 border-b-2" style="backgroundColor:#ECEAED">
+  <header class="p-2 border-b-2 bg-header">
     <div class="wrap-header flex items-center justify-between flex-wrap">
       <div class="flex flex-no-shrink items-center">
         <button
@@ -38,7 +38,6 @@ export default {
       store: useStore(),
     };
   },
-  
   methods: {
     sidebarToggle: function () {
       document.querySelector(".flex-sidebar").classList.remove("hidden");

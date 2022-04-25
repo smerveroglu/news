@@ -1,7 +1,5 @@
 <template>
-  <!-- sidebar -->
-  <nav class="sidebar" style="backgroundColor:#ECEAED">
-    <!-- sidebar head -->
+  <nav class="sidebar bg-header">
     <div class="sidebar-head p-4">
       <h2
         class="text-2xl font-normal text-gray-400 cursor-pointer"
@@ -13,7 +11,6 @@
         <font-awesome-icon :icon="['fas', 'xmark']" />
       </button>
     </div>
-    <!-- sidebar list -->
     <div
       class="sidebar-list p-4 mt-2"
       v-for="element in newspapers"
@@ -36,7 +33,6 @@
 </template>
 <script>
 import axios from "axios";
-import router from "../router";
 export default {
   data() {
     return {

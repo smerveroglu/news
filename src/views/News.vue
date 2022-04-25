@@ -1,7 +1,7 @@
 <template>
-  <div class="alert h-auto p-3">
+  <div class="h-auto p-3">
     <div class="mt-5 w-full">
-      <h1 class="text-2xl font-semibold" style="color: rgb(7 63 121)">
+      <h1 class="text-2xl font-semibold text-header">
         {{ newspaper.replaceAll("-", " ") }}
         <font-awesome-icon
           class="cursor-pointer"
@@ -18,8 +18,8 @@
         :key="index"
       >
         <img
-          class="w-full object-cover h-32 sm:h-48 md:h-64 "
-          :src="getImageSrc(element.urlToImage)"
+          class="w-full object-cover h-32 sm:h-48 md:h-64"
+          :src="checkImageSrc(element.urlToImage)"
         />
         <div class="p-3">
           <span class="text-sm text-primary">
@@ -28,7 +28,7 @@
           <h3 class="font-semibold text-xl leading- text-gray-700 my-2">
             {{ element.title }}
           </h3>
-          <p class="paragraph-normal text-gray-600" style="word-wrap: anywhere;">
+          <p class="paragraph-normal text-gray-600" style="word-wrap: anywhere">
             {{ element.content }}
           </p>
           <!-- <a class="mt-3 block" href="#">Read More >></a> -->
@@ -52,11 +52,6 @@ export default {
       obj: {},
     };
   },
-  computed: {
-    groupedNews() {
-      return chunk(this.news, 3);
-    },
-  },
   methods: {
     getNewspaper() {
       let index = this.newspapers
@@ -65,6 +60,7 @@ export default {
       this.obj = this.newspapers[index];
       return index;
     },
+    // set favorite newspaper
     setFavorite() {
       if (this.obj.favorite === "lightGray") {
         this.obj.favorite = "#FDCA9C";
@@ -82,7 +78,8 @@ export default {
       }
       localStorage.setItem("newspapers", JSON.stringify(this.newspapers));
     },
-    getImageSrc(urlToImage) {
+    //img src is null or not
+    checkImageSrc(urlToImage) {
       return urlToImage && urlToImage !== "null"
         ? urlToImage
         : "https://moh-hei.edu.om/documents/2231351/3455666/news/9c67104a-4607-4348-885e-492f52b29e6e?t=1597578533202";
@@ -92,6 +89,7 @@ export default {
     const route = useRoute();
     this.newspaper = route.params.newspaper;
     this.getNewspaper();
+    //get news
     let requestURL =
       "https://newsapi.org/v2/everything?sources=" +
       this.obj.id +
@@ -102,6 +100,7 @@ export default {
     });
   },
   watch: {
+    // filter news
     "$store.state.search": {
       handler(newVal) {
         if (newVal !== "") {
