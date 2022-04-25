@@ -1,5 +1,4 @@
 <template>
-  <!-- App -->
   <div class="flex bg-packed font-lexend">
     <div
       class="flex-sidebar lg:flex-auto overflow-auto w-sidebar lg:block hidden bg-white border-r-2 h-screen  lg:relative fixed"
@@ -9,10 +8,8 @@
     <div class="flex-auto w-full overflow-auto h-screen">
       <Header />
       <router-view />
-      <!-- <Footer /> -->
     </div>
   </div>
-  <!-- end app -->
 </template>
 
 <script>
