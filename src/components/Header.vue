@@ -1,5 +1,4 @@
 <template>
-  <!-- this header -->
   <header class="p-2 border-b-2" style="backgroundColor:#ECEAED">
     <div class="wrap-header flex items-center justify-between flex-wrap">
       <div class="flex flex-no-shrink items-center">
