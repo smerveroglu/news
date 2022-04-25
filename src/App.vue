@@ -1,28 +1,34 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <!-- App -->
+  <div class="flex bg-packed font-lexend">
+    <div
+      class="flex-sidebar lg:flex-auto overflow-auto w-sidebar lg:block hidden bg-white border-r-2 h-screen  lg:relative fixed"
+    >
+      <Sidebar />
+    </div>
+    <div class="flex-auto w-full overflow-auto h-screen">
+      <Header />
+      <router-view />
+      <!-- <Footer /> -->
+    </div>
   </div>
+  <!-- end app -->
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+  // vue Components
+  import Sidebar from "@/components/Sidebar";
+  import Header from "@/components/Header";
+  import Footer from "@/components/Footer";
+  import axios from 'axios';
 
-export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
-}
+  export default {
+    name: "App",
+
+    components: {
+      Header,
+      Footer,
+      Sidebar,
+    },
+  };
 </script>
-
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
