@@ -5,11 +5,7 @@
         Top Headlines
       </h1>
     </div>
-    <!-- grid wrapper card -->
-    <!-- grid wrapper card -->
     <div class="grid sm:grid-cols-2 grid-col-1 gap-4 mt-5">
-      <!-- default alert  -->
-
       <div
         class="card bg-white rounded-md p-5 shadow"
         v-for="(element, index) in filternews"
