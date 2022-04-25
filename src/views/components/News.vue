@@ -23,12 +23,6 @@
         <img
           class="h-auto w-auto object-cover"
           :src="element.urlToImage"
-          v-if="element.urlToImage"
-        />
-        <img
-          class="h-auto w-auto object-cover"
-          src="@/assets/news.webp"
-          v-else
         />
         <div class="p-3">
           <span class="text-sm text-primary">
