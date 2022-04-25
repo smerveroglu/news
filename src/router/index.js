@@ -1,6 +1,6 @@
 import { createRouter, createWebHistory } from "vue-router";
-import News from "../views/components/News.vue";
-import TopHeadlines from "../views/components/TopHeadlines.vue";
+import News from "../views/News.vue";
+import TopHeadlines from "../views/TopHeadlines.vue";
 
 
 const routes = [

@@ -18,8 +18,8 @@
         :key="index"
       >
         <img
-          class="h-auto w-auto object-cover"
-          :src="element.urlToImage"
+          class="w-full object-cover h-32 sm:h-48 md:h-64 "
+          :src="getImageSrc(element.urlToImage)"
         />
         <div class="p-3">
           <span class="text-sm text-primary">
@@ -28,7 +28,7 @@
           <h3 class="font-semibold text-xl leading- text-gray-700 my-2">
             {{ element.title }}
           </h3>
-          <p class="paragraph-normal text-gray-600">
+          <p class="paragraph-normal text-gray-600" style="word-wrap: anywhere;">
             {{ element.content }}
           </p>
           <!-- <a class="mt-3 block" href="#">Read More >></a> -->
@@ -82,6 +82,11 @@ export default {
       }
       localStorage.setItem("newspapers", JSON.stringify(this.newspapers));
     },
+    getImageSrc(urlToImage) {
+      return urlToImage && urlToImage !== "null"
+        ? urlToImage
+        : "https://moh-hei.edu.om/documents/2231351/3455666/news/9c67104a-4607-4348-885e-492f52b29e6e?t=1597578533202";
+    },
   },
   created() {
     const route = useRoute();
@@ -95,14 +100,6 @@ export default {
     axios.get(requestURL).then((res) => {
       this.filternews = this.news = res.data.articles;
     });
-  },
-  mounted() {
-    var alert_dis = document.querySelectorAll(".alert-dismiss");
-    alert_dis.forEach((x) =>
-      x.addEventListener("click", function () {
-        x.parentElement.classList.add("hidden");
-      })
-    );
   },
   watch: {
     "$store.state.search": {
